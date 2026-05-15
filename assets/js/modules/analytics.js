@@ -9,8 +9,8 @@
  * Add your production domain(s) here
  */
 const AUTHORIZED_DOMAINS = [
-  'oktayshakirov.com',
-  'www.oktayshakirov.com',
+  'github.com',
+  'rohit94r.github.io',
   // Add localhost for development (optional)
   // 'localhost',
   // '127.0.0.1'
