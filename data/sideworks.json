@@ -9,9 +9,9 @@
     "image": "./assets/images/projects/drone.jpg",
     "alt": "Drone Photography",
     "links": {
-      "youtube": "https://www.youtube.com/@shakirov030",
-      "adobeStock": "https://stock.adobe.com/de/contributor/213141910/Oktay",
-      "shutterstock": "https://www.shutterstock.com/g/Shakirov030"
+      "youtube": "#",
+      "adobeStock": "#",
+      "shutterstock": "#"
     }
   },
   {
@@ -24,7 +24,7 @@
     "image": "./assets/images/projects/n8n.jpg",
     "alt": "Automation Workflows",
     "links": {
-      "github": "https://github.com/oktayshakirov/crypto-wiki-automation"
+      "github": "#"
     }
   },
   {
@@ -37,9 +37,9 @@
     "image": "./assets/images/projects/sha-beats.jpg",
     "alt": "Sha Beats",
     "links": {
-      "spotify": "https://open.spotify.com/artist/0veyQeAcyLxXfbbnZpa3mf?si=0Xk9lBtDTP24o8w1nrPfRw",
-      "instagram": "https://www.instagram.com/sha.beats",
-      "youtube": "https://www.youtube.com/@SHABEATS"
+      "spotify": "#",
+      "instagram": "#",
+      "youtube": "#"
     }
   },
   {
@@ -52,9 +52,9 @@
     "image": "./assets/images/projects/pigletz.jpg",
     "alt": "Pigletz",
     "links": {
-      "website": "https://pigletz.com",
-      "instagram": "https://www.instagram.com/pigletznft",
-      "youtube": "https://www.youtube.com/@PigletzNFT"
+      "website": "#",
+      "instagram": "#",
+      "youtube": "#"
     }
   },
   {
@@ -67,7 +67,7 @@
     "image": "./assets/images/projects/digital-content.jpg",
     "alt": "Sha Pixels",
     "links": {
-      "instagram": "https://www.instagram.com/sha.pixels"
+      "instagram": "#"
     }
   }
 ]
