@@ -1,0 +1,195 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Article } from "@/components/layout/Article";
+import { PaginationLink } from "@/components/layout/PaginationLink";
+
+type ProductImage = {
+  src: string;
+  alt: string;
+  imageClass: string;
+};
+
+type Product = {
+  title: string;
+  tagline: string;
+  status: string;
+  description: string;
+  categories: string[];
+  images: ProductImage[];
+  links: {
+    preview: string;
+    github: string;
+  };
+};
+
+// Edit product cards here. Add more screenshots inside each `images` array.
+// Use `imageClass: "h-full w-full object-cover"` for full box cover.
+const products: Product[] = [
+  {
+    title: "ApnaAI",
+    tagline: "AI SaaS Product",
+    status: "Founder Build",
+    description:
+      "A practical AI SaaS product for real users, focused on productivity, automation, and accessible AI-powered workflows.",
+    categories: ["AI SaaS", "Founder", "Automation"],
+    images: [
+      {
+        src: "/assets/projects/apnaai.png",
+        alt: "ApnaAI product preview",
+        imageClass: "h-full w-full object-cover",
+      },
+      {
+        src: "/assets/home/journey/apnaai.png",
+        alt: "ApnaAI journey screenshot",
+        imageClass: "h-full w-full object-cover",
+      },
+    ],
+    links: {
+      preview: "https://apnaai.online/",
+      github: "#",
+    },
+  },
+  {
+    title: "NeexMeet",
+    tagline: "Collaboration Product",
+    status: "Founder Build",
+    description:
+      "A meeting and collaboration product built around cleaner communication, organized workflows, and real-world team productivity.",
+    categories: ["Meetings", "Collaboration", "Web App"],
+    images: [
+      {
+        src: "/assets/projects/neexmeet.png",
+        alt: "NeexMeet product preview",
+        imageClass: "h-full w-full object-cover",
+      },
+      {
+        src: "/assets/home/journey/neexmeet.png",
+        alt: "NeexMeet journey screenshot",
+        imageClass: "h-full w-full object-cover",
+      },
+    ],
+    links: {
+      preview: "https://neexmeet.com/",
+      github: "#",
+    },
+  },
+  {
+    title: "Roomezes",
+    tagline: "Campus Living Platform",
+    status: "Startup MVP",
+    description:
+      "A student-focused platform for rooms, food, events, and campus services, designed to bring everyday college needs into one product.",
+    categories: ["Startup", "Campus", "MVP"],
+    images: [
+      {
+        src: "/assets/projects/roomezes.png",
+        alt: "Roomezes product preview",
+        imageClass: "h-full w-full object-cover",
+      },
+      {
+        src: "/assets/home/journey/roomezes.png",
+        alt: "Roomezes journey screenshot",
+        imageClass: "h-full w-full object-cover",
+      },
+    ],
+    links: {
+      preview: "https://roomezes.com/",
+      github: "#",
+    },
+  },
+];
+
+function ProductCard({ product }: { product: Product }) {
+  const [activeImage, setActiveImage] = useState(0);
+  const image = product.images[activeImage] ?? product.images[0];
+
+  useEffect(() => {
+    if (product.images.length <= 1) return;
+
+    const timer = window.setInterval(() => {
+      setActiveImage((current) => (current + 1) % product.images.length);
+    }, 3000);
+
+    return () => window.clearInterval(timer);
+  }, [product.images.length]);
+
+  return (
+    <li className="overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.045] shadow-glass backdrop-blur-md">
+      <figure className="relative min-h-[360px] overflow-hidden bg-[#10131d] [clip-path:inset(0_round_18px)] [contain:paint] md:min-h-[460px]">
+        <img
+          className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-20 blur-xl"
+          src={image.src}
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          className={`absolute inset-0 z-[1] ${image.imageClass}`}
+          src={image.src}
+          alt={image.alt}
+        />
+      </figure>
+
+      <div className="flex flex-col justify-center p-6 md:p-8">
+        <div className="mb-4 flex flex-wrap gap-2">
+          {product.categories.map((category) => (
+            <span
+              className="rounded-full bg-white/[0.06] px-3 py-1 text-xs text-portfolio-muted"
+              key={category}
+            >
+              {category}
+            </span>
+          ))}
+        </div>
+
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-portfolio-gold">
+          {product.status}
+        </p>
+        <h3 className="mb-2 text-[28px] font-semibold text-white">
+          {product.title}
+        </h3>
+        <p className="mb-4 text-[16px] text-portfolio-accent">
+          {product.tagline}
+        </p>
+        <p className="text-[15px] leading-7 text-portfolio-muted">
+          {product.description}
+        </p>
+
+        <div className="mt-7 grid gap-3 sm:grid-cols-2">
+          <a
+            className="rounded-lg bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(255,190,80,0.25)]"
+            href={product.links.preview}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Preview
+          </a>
+          <a
+            className="rounded-lg bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(255,190,80,0.25)]"
+            href={product.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </li>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Article page="products" title="Products">
+      <section>
+        <ul className="grid gap-8">
+          {products.map((product) => (
+            <ProductCard product={product} key={product.title} />
+          ))}
+        </ul>
+      </section>
+
+      <PaginationLink href="/certificates" />
+    </Article>
+  );
+}
