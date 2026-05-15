@@ -1,64 +1,51 @@
-# Portfolio
-Fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS and JavaScript.
+# Rohit Jadhav Portfolio
 
-## Installing the Portfolio
+Next.js portfolio for Rohit Jadhav, Full Stack Developer and AI SaaS Builder from Mumbai, India.
 
-To install follow these steps:
+## Tech Stack
 
-Linux and macOS:
+- Next.js App Router
+- TypeScript
+- React
+- CSS migrated from the original portfolio design
+- Local structured data files for easy future updates
+
+## Folder Structure
+
+- `app/` - Next.js routes and pages
+- `components/` - reusable layout, home, project, certificate, contact, and GitHub components
+- `data/` - editable portfolio content
+- `public/assets/profile/` - profile image
+- `public/assets/home/journey/` - Journey section assets
+- `public/assets/projects/` - project page assets
+- `public/assets/certificates/` - certificate and achievement page assets
+- `public/assets/sideworks/` - sidework page assets
+- `public/assets/skills/` - development skill icons
+- `public/assets/shared/` - shared icons and badges
+
+## Edit Content
+
+Most future updates can be made in these files:
+
+- `data/profile.ts`
+- `data/home.ts`
+- `data/projects.ts`
+- `data/certificates.ts`
+- `data/sideworks.ts`
+- `data/skills.ts`
+
+## Run Locally
 
 ```bash
-sudo git clone https://github.com/Rohit94r/Rohit-Portfolio.git
+npm install
+npm run dev
 ```
 
-Windows:
+Open `http://localhost:3000`.
+
+## Build
 
 ```bash
-git clone https://github.com/Rohit94r/Rohit-Portfolio.git
+npm run typecheck
+npm run build
 ```
-
-## Demo
-
-![Desktop Demo](./assets/images/projects/portfolio.png "Desktop Demo")
-
-<p align="center">
-  <a href="https://rohit94r.github.io/Rohit-Portfolio"><strong>➥ Live Demo</strong></a>
-</p>
-
-
-## ⚠️ Important: Google Analytics Configuration
-
-**If you're using this portfolio template, you MUST configure Google Analytics:**
-
-The analytics script is **domain-protected** - it only works on `rohit94r.github.io/Rohit-Portfolio`. 
-
-To use your own analytics:
-1. Open `assets/js/modules/analytics.js`
-2. Replace `G-G1H2WJ7XH4` with your own Google Analytics Tracking ID
-3. Update `AUTHORIZED_DOMAINS` array with your domain(s)
-
-**This prevents traffic from copied portfolios from being counted in the original owner's analytics.**
-
-## ⚠️ Important: Attribution Notice
-
-**This portfolio includes an attribution footer that must remain visible.**
-
-- **DO NOT remove or modify the attribution** - doing so will break website functionality
-- The attribution is an integral part of the codebase and removing it will cause errors
-- If you wish to use this portfolio **without attribution**, please contact me:
-  - **Email:** rjdhav67@gmail.com
-  - **LinkedIn:** [rohit-jadhav94](https://www.linkedin.com/in/rohit-jadhav94/)
-
-**Attempting to remove the attribution may result in broken functionality and is not recommended.**
-
-## License
-
-MIT
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*Translation: Ofcourse you can use this for you project! Just make sure to say where you got this from :)
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

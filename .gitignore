@@ -43,10 +43,13 @@ yarn-error.log*
 # Build outputs
 dist/
 build/
+.next/
+out/
+node_modules/
+tsconfig.tsbuildinfo
 *.min.js
 *.min.css
 
 # Internal documentation (keep private)
 ATTRIBUTION_PROTECTION.md
 PERFORMANCE_OPTIMIZATION.md
-

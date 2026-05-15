@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://rohit94r.github.io/Rohit-Portfolio/sitemap.xml
