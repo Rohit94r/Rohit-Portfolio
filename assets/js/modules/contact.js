@@ -74,7 +74,7 @@ export const initCalendly = () => {
     e.preventDefault();
     if (typeof Calendly !== "undefined") {
       Calendly.initPopupWidget({
-        url: "https://calendly.com/oktayshakirov/30min?hide_landing_page_details=1&hide_gdpr_banner=1"
+        url: "#"
       });
     }
   });
