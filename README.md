@@ -8,13 +8,13 @@ To install follow these steps:
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/oktayshakirov/portfolio.git
+sudo git clone https://github.com/Rohit94r/Rohit-Portfolio.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/oktayshakirov/portfolio.git
+git clone https://github.com/Rohit94r/Rohit-Portfolio.git
 ```
 
 ## Demo
@@ -22,7 +22,7 @@ git clone https://github.com/oktayshakirov/portfolio.git
 ![Desktop Demo](./assets/images/projects/portfolio.png "Desktop Demo")
 
 <p align="center">
-  <a href="https://oktayshakirov.com"><strong>➥ Live Demo</strong></a>
+  <a href="https://rohit94r.github.io/Rohit-Portfolio"><strong>➥ Live Demo</strong></a>
 </p>
 
 
@@ -30,7 +30,7 @@ git clone https://github.com/oktayshakirov/portfolio.git
 
 **If you're using this portfolio template, you MUST configure Google Analytics:**
 
-The analytics script is **domain-protected** - it only works on `oktayshakirov.com`. 
+The analytics script is **domain-protected** - it only works on `rohit94r.github.io/Rohit-Portfolio`. 
 
 To use your own analytics:
 1. Open `assets/js/modules/analytics.js`
@@ -46,8 +46,8 @@ To use your own analytics:
 - **DO NOT remove or modify the attribution** - doing so will break website functionality
 - The attribution is an integral part of the codebase and removing it will cause errors
 - If you wish to use this portfolio **without attribution**, please contact me:
-  - **Email:** info@oktayshakirov.com
-  - **LinkedIn:** [oktayshakirov](https://www.linkedin.com/in/oktayshakirov)
+  - **Email:** rjdhav67@gmail.com
+  - **LinkedIn:** [rohit-jadhav94](https://www.linkedin.com/in/rohit-jadhav94/)
 
 **Attempting to remove the attribution may result in broken functionality and is not recommended.**
 
