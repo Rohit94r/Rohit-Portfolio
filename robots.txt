@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oktayshakirov.com/sitemap.xml
+Sitemap: https://rohit94r.github.io/Rohit-Portfolio/sitemap.xml
