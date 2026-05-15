@@ -1,12 +1,5 @@
-import { Article } from "@/components/layout/Article";
-import { PaginationLink } from "@/components/layout/PaginationLink";
-import { SideworksList } from "@/components/projects/SideworksList";
+import { redirect } from "next/navigation";
 
-export default function SideworksPage() {
-  return (
-    <Article page="sideworks" title="Sideworks">
-      <SideworksList />
-      <PaginationLink href="/certificates" />
-    </Article>
-  );
+export default function SideworksRedirectPage() {
+  redirect("/products");
 }
