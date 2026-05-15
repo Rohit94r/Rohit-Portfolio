@@ -2,21 +2,71 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   IoHourglass,
   IoLocationSharp,
   IoSwapVertical,
 } from "react-icons/io5";
-import { navigationItems } from "@/data/navigation";
-import { profile, socials } from "@/data/profile";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+} from "react-icons/fa6";
+
+const profile = {
+  name: "Rohit Jadhav",
+  age: "20 years",
+  location: "Mumbai, India",
+  avatar: "/assets/profile/rohit-profile.png",
+  motto: "Google Gemini Student Ambassador | Full Stack Developer Building SaaS Products | Ex-SDE Intern @ Bluestock | 7x National Hackathon Winner",
+  headline:
+    "Google Gemini Student Ambassador | Full Stack Developer | Ex-SDE Intern @ Bluestock | 7x National Hackathon Winner",
+};
+
+const socials = [
+  {
+    name: "GitHub",
+    href: "https://github.com/Rohit94r",
+    Icon: FaGithub,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/rohit-jadhav94/",
+    Icon: FaLinkedin,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/dev.by.rohit/",
+    Icon: FaInstagram,
+  },
+  {
+    name: "Twitter / X",
+    href: "https://x.com/RohitJadhav9409",
+    Icon: FaXTwitter,
+  },
+];
+
+const navigationItems = [
+  { label: "About", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "Products", href: "/products" },
+  { label: "Certificates", href: "/certificates" },
+  { label: "Contact", href: "/contact" },
+];
 
 export function PortfolioShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [pathname]);
 
   return (
     <main>
-      <aside className="sidebar active" data-sidebar>
+      <aside className={`sidebar${isSidebarOpen ? " active" : ""}`} data-sidebar>
         <div className="sidebar-info">
           <figure className="avatar-box">
             <img src={profile.avatar} alt={profile.name} />
@@ -36,6 +86,8 @@ export function PortfolioShell({ children }: { children: ReactNode }) {
             className="info_more-btn"
             data-sidebar-btn
             aria-label="Toggle sidebar information"
+            aria-expanded={isSidebarOpen}
+            onClick={() => setIsSidebarOpen((current) => !current)}
             type="button"
           >
             <IoSwapVertical aria-hidden="true" />
