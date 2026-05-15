@@ -1,19 +1,110 @@
 [
-  { "id": 1, "name": "HTML", "image": "./assets/images/html.png", "alt": "HTML" },
-  { "id": 2, "name": "CSS", "image": "./assets/images/css.png", "alt": "CSS" },
-  { "id": 3, "name": "JavaScript", "image": "./assets/images/java-script.png", "alt": "JavaScript" },
-  { "id": 4, "name": "React", "image": "./assets/images/react.png", "alt": "React" },
-  { "id": 5, "name": "Next", "image": "./assets/images/next.png", "alt": "Next" },
-  { "id": 6, "name": "Node", "image": "./assets/images/node.png", "alt": "Node" },
-  { "id": 7, "name": "TypeScript", "image": "./assets/images/typescript.png", "alt": "TypeScript" },
-  { "id": 8, "name": "Npm", "image": "./assets/images/npm.png", "alt": "Npm" },
-  { "id": 9, "name": "PHP", "image": "./assets/images/php.png", "alt": "PHP" },
-  { "id": 10, "name": "MySQL", "image": "./assets/images/mysql.png", "alt": "MySQL" },
-  { "id": 11, "name": "Linux", "image": "./assets/images/linux.png", "alt": "Linux" },
-  { "id": 12, "name": "Wordpress", "image": "./assets/images/wordpress.png", "alt": "Wordpress" },
-  { "id": 13, "name": "Git", "image": "./assets/images/git.png", "alt": "Git" },
-  { "id": 14, "name": "Docker", "image": "./assets/images/docker.png", "alt": "Docker" },
-  { "id": 15, "name": "Unity", "image": "./assets/images/unity.png", "alt": "Unity" },
-  { "id": 16, "name": "Figma", "image": "./assets/images/figma.png", "alt": "Figma" },
-  { "id": 17, "name": "n8n", "image": "./assets/images/n8n.png", "alt": "n8n" }
+  {
+    "id": 1,
+    "name": "JavaScript",
+    "alt": "JavaScript",
+    "image": "./assets/images/java-script.png"
+  },
+  {
+    "id": 2,
+    "name": "TypeScript",
+    "alt": "TypeScript",
+    "image": "./assets/images/typescript.png"
+  },
+  {
+    "id": 3,
+    "name": "React.js",
+    "alt": "React.js",
+    "image": "./assets/images/react.png"
+  },
+  {
+    "id": 4,
+    "name": "Next.js",
+    "alt": "Next.js",
+    "image": "./assets/images/next.png"
+  },
+  {
+    "id": 5,
+    "name": "Node.js",
+    "alt": "Node.js",
+    "image": "./assets/images/node.png"
+  },
+  {
+    "id": 6,
+    "name": "MongoDB",
+    "alt": "MongoDB",
+    "image": "./assets/images/skills/mongodb.svg"
+  },
+  {
+    "id": 7,
+    "name": "PostgreSQL",
+    "alt": "PostgreSQL",
+    "image": "./assets/images/skills/postgresql.svg"
+  },
+  {
+    "id": 8,
+    "name": "Supabase",
+    "alt": "Supabase",
+    "image": "./assets/images/skills/supabase.svg"
+  },
+  {
+    "id": 9,
+    "name": "Java",
+    "alt": "Java",
+    "image": "./assets/images/skills/java.svg"
+  },
+  {
+    "id": 10,
+    "name": "Spring Boot",
+    "alt": "Spring Boot",
+    "image": "./assets/images/skills/spring-boot.svg"
+  },
+  {
+    "id": 11,
+    "name": "Angular",
+    "alt": "Angular",
+    "image": "./assets/images/skills/angular.svg"
+  },
+  {
+    "id": 12,
+    "name": "Git & GitHub",
+    "alt": "Git & GitHub",
+    "image": "./assets/images/git.png"
+  },
+  {
+    "id": 13,
+    "name": "Tailwind CSS",
+    "alt": "Tailwind CSS",
+    "image": "./assets/images/skills/tailwind-css.svg"
+  },
+  {
+    "id": 14,
+    "name": "Prisma",
+    "alt": "Prisma",
+    "image": "./assets/images/skills/prisma.svg"
+  },
+  {
+    "id": 15,
+    "name": "Firebase",
+    "alt": "Firebase",
+    "image": "./assets/images/skills/firebase.svg"
+  },
+  {
+    "id": 16,
+    "name": "OpenAI APIs",
+    "alt": "OpenAI APIs",
+    "image": "./assets/images/skills/openai.svg"
+  },
+  {
+    "id": 17,
+    "name": "Vercel",
+    "alt": "Vercel",
+    "image": "./assets/images/skills/vercel.svg"
+  },
+  {
+    "id": 18,
+    "name": "Netlify",
+    "alt": "Netlify",
+    "image": "./assets/images/skills/netlify.svg"
+  }
 ]
