@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import type { ReactNode } from "react";
 import { PortfolioShell } from "@/components/layout/PortfolioShell";
-import { profile } from "@/data/profile";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -12,24 +11,31 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(profile.siteUrl),
-  title: profile.title,
-  description: profile.description,
-  keywords: profile.keywords,
-  authors: [{ name: profile.name }],
-  creator: profile.name,
+  metadataBase: new URL("https://rohit94r.github.io/Rohit-Portfolio"),
+  title:
+    "Rohit Jadhav - Full Stack Developer | AI SaaS Builder | Mumbai, India",
+  description:
+    "Rohit Jadhav is a Full Stack Developer and AI SaaS Builder from Mumbai focused on building scalable SaaS products, AI-powered tools, and modern web applications.",
+  keywords:
+    "Full Stack Developer, AI SaaS Builder, MERN Stack Developer, Next.js Developer, Google Student Ambassador, Hackathon Winner",
+  authors: [{ name: "Rohit Jadhav" }],
+  creator: "Rohit Jadhav",
   openGraph: {
-    title: profile.title,
-    description: profile.headline,
+    title:
+      "Rohit Jadhav - Full Stack Developer | AI SaaS Builder | Mumbai, India",
+    description:
+      "Google Gemini Student Ambassador | Full Stack Developer | Ex-SDE Intern @ Bluestock | 7x National Hackathon Winner",
     type: "website",
-    siteName: `${profile.name} Portfolio`,
-    images: [profile.avatar],
+    siteName: "Rohit Jadhav Portfolio",
+    images: ["/assets/profile/rohit-profile.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: profile.title,
-    description: profile.headline,
-    images: [profile.avatar],
+    title:
+      "Rohit Jadhav - Full Stack Developer | AI SaaS Builder | Mumbai, India",
+    description:
+      "Google Gemini Student Ambassador | Full Stack Developer | Ex-SDE Intern @ Bluestock | 7x National Hackathon Winner",
+    images: ["/assets/profile/rohit-profile.png"],
     creator: "@RohitJadhav9409",
   },
 };
