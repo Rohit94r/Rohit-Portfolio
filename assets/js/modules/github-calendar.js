@@ -5,6 +5,68 @@
 
 import { formatDate } from "./utils.js";
 
+const calculateContributionStats = (contributions, total) => {
+  let currentStreak = 0;
+  let longestStreak = 0;
+  let runningStreak = 0;
+  let activeDays = 0;
+
+  contributions.forEach((contribution) => {
+    if (contribution.count > 0) {
+      activeDays += 1;
+      runningStreak += 1;
+      longestStreak = Math.max(longestStreak, runningStreak);
+    } else {
+      runningStreak = 0;
+    }
+  });
+
+  for (let i = contributions.length - 1; i >= 0; i -= 1) {
+    if (contributions[i].count > 0) {
+      currentStreak += 1;
+    } else {
+      break;
+    }
+  }
+
+  return {
+    totalContributions:
+      total?.lastYear ?? contributions.reduce((sum, day) => sum + day.count, 0),
+    activeDays,
+    currentStreak,
+    longestStreak,
+  };
+};
+
+const renderContributionStats = (calendarContainer, stats) => {
+  let statsContainer = calendarContainer.querySelector(".contribution-stats");
+
+  if (!statsContainer) {
+    statsContainer = document.createElement("div");
+    statsContainer.className = "contribution-stats";
+    calendarContainer.appendChild(statsContainer);
+  }
+
+  statsContainer.innerHTML = `
+    <div class="contribution-stat">
+      <span>${stats.totalContributions.toLocaleString()}</span>
+      <small>Total Contributions</small>
+    </div>
+    <div class="contribution-stat">
+      <span>${stats.activeDays}</span>
+      <small>Commit Days</small>
+    </div>
+    <div class="contribution-stat">
+      <span>${stats.currentStreak}</span>
+      <small>Current Commit Streak</small>
+    </div>
+    <div class="contribution-stat">
+      <span>${stats.longestStreak}</span>
+      <small>Longest Commit Streak</small>
+    </div>
+  `;
+};
+
 /**
  * Initialize GitHub contributions calendar
  */
@@ -20,13 +82,42 @@ export const initGitHubCalendar = async () => {
     return;
   }
 
-  const username = "oktayshakirov";
+  const username = "Rohit94r";
   const apiUrl = `https://github-contributions-api.jogruber.de/v4/${username}?y=last`;
 
   // Create months container
-  const monthsContainer = document.createElement("div");
-  monthsContainer.className = "months-container";
-  calendarContainer.insertBefore(monthsContainer, grid);
+  let monthsContainer = calendarContainer.querySelector(".months-container");
+  if (!monthsContainer) {
+    monthsContainer = document.createElement("div");
+    monthsContainer.className = "months-container";
+    calendarContainer.insertBefore(monthsContainer, grid);
+  }
+
+  let calendarBody = calendarContainer.querySelector(".calendar-body");
+  if (!calendarBody) {
+    calendarBody = document.createElement("div");
+    calendarBody.className = "calendar-body";
+    const weekdayLabels = document.createElement("div");
+    weekdayLabels.className = "weekday-labels";
+    weekdayLabels.innerHTML = `
+      <span></span>
+      <span>Mon</span>
+      <span></span>
+      <span>Wed</span>
+      <span></span>
+      <span>Fri</span>
+      <span></span>
+    `;
+    grid.replaceWith(calendarBody);
+    calendarBody.append(weekdayLabels, grid);
+  }
+
+  let legend = calendarContainer.querySelector(".contribution-legend");
+  if (!legend) {
+    legend = document.createElement("div");
+    legend.className = "contribution-legend";
+    calendarContainer.appendChild(legend);
+  }
 
   try {
     const response = await fetch(apiUrl);
@@ -36,6 +127,7 @@ export const initGitHubCalendar = async () => {
 
     const data = await response.json();
     const contributions = data.contributions;
+    grid.innerHTML = "";
 
     if (!contributions || contributions.length === 0) {
       console.warn("No contribution data found");
@@ -43,12 +135,14 @@ export const initGitHubCalendar = async () => {
     }
 
     const firstDate = new Date(contributions[0].date);
-    const dayOfWeek = firstDate.getUTCDay();
-    const startDay = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+    const startDay = firstDate.getUTCDay();
+    const weekCount = Math.ceil((startDay + contributions.length) / 7);
 
     // Add empty cells for alignment
     for (let i = 0; i < startDay; i++) {
-      grid.appendChild(document.createElement("div"));
+      const emptyCell = document.createElement("div");
+      emptyCell.className = "calendar-day is-empty";
+      grid.appendChild(emptyCell);
     }
 
     // Populate grid with contribution data
@@ -64,15 +158,21 @@ export const initGitHubCalendar = async () => {
       grid.appendChild(dayCell);
     });
 
-    // Populate month labels
-    const monthLabels = new Set();
+    while (grid.children.length < weekCount * 7) {
+      const emptyCell = document.createElement("div");
+      emptyCell.className = "calendar-day is-empty";
+      grid.appendChild(emptyCell);
+    }
+
+    // Populate month labels aligned to the contribution weeks
+    const monthLabels = [];
     let lastMonth = -1;
-    contributions.forEach((c) => {
+    contributions.forEach((c, index) => {
       const date = new Date(c.date);
       const month = date.getUTCMonth();
       if (month !== lastMonth) {
-        monthLabels.add({
-          index: month,
+        monthLabels.push({
+          column: Math.floor((startDay + index) / 7) + 2,
           name: date.toLocaleString("default", {
             month: "short",
             timeZone: "UTC",
@@ -81,9 +181,25 @@ export const initGitHubCalendar = async () => {
         lastMonth = month;
       }
     });
-    monthsContainer.innerHTML = Array.from(monthLabels)
-      .map((m) => `<div>${m.name}</div>`)
-      .join("");
+    monthsContainer.style.gridTemplateColumns = `32px repeat(${weekCount}, var(--calendar-cell))`;
+    monthsContainer.innerHTML = `<span></span>${monthLabels
+      .map((m) => `<span style="grid-column: ${m.column};">${m.name}</span>`)
+      .join("")}`;
+
+    legend.innerHTML = `
+      <span>Less</span>
+      <i class="calendar-day"></i>
+      <i class="calendar-day level-1"></i>
+      <i class="calendar-day level-2"></i>
+      <i class="calendar-day level-3"></i>
+      <i class="calendar-day level-4"></i>
+      <span>More</span>
+    `;
+
+    renderContributionStats(
+      calendarContainer,
+      calculateContributionStats(contributions, data.total),
+    );
 
     // Tooltip logic
     calendarContainer.addEventListener("mouseover", (event) => {
