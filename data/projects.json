@@ -23,8 +23,8 @@
     "technologies": "React Native",
     "image": "./assets/images/projects/drone-pal.png",
     "links": {
-      "ios": "https://apps.apple.com/de/app/drone-pal/id6760303630?l=en-GB",
-      "android": "https://play.google.com/store/apps/details?id=com.shadev.dronepal"
+      "ios": "#",
+      "android": "#"
     }
   },
   {
@@ -38,23 +38,23 @@
     "technologies": "React Native",
     "image": "./assets/images/projects/love-swipe.png",
     "links": {
-      "ios": "https://apps.apple.com/de/app/love-swipe-truth-or-dare/id6757429065?l=en-GB",
-      "android": "https://play.google.com/store/apps/details?id=com.shadev.loveswipe"
+      "ios": "#",
+      "android": "#"
     }
   },
   {
-    "title": "Hello Berlin 365",
+    "title": "Building Scalable SaaS Products",
     "category": [
       "websites",
       "designs"
     ],
-    "status": "Complete Build",
-    "type": "Solo Development",
-    "technologies": "Next.js | Shadcn UI | Tailwind CSS",
+    "status": "AI SaaS Builder",
+    "type": "Startup Product Development",
+    "technologies": "Next.js | MERN Stack | Supabase | AI Integrations",
     "image": "./assets/images/projects/helloberlin365.png",
     "links": {
-      "preview": "https://www.helloberlin365.com",
-      "github": "https://github.com/oktayshakirov/helloberlin365"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -68,8 +68,8 @@
     "technologies": "React Native",
     "image": "./assets/images/projects/shape-beats.jpg",
     "links": {
-      "ios": "https://apps.apple.com/us/app/shape-beats/id6751116257",
-      "android": "https://play.google.com/store/apps/details?id=com.shapebeats"
+      "ios": "#",
+      "android": "#"
     }
   },
   {
@@ -82,8 +82,8 @@
     "technologies": "React Native | TypeScript | Firebase",
     "image": "./assets/images/projects/cryptowiki-app.jpg",
     "links": {
-      "ios": "https://apps.apple.com/de/app/crypto-wiki/id6742765176",
-      "android": "https://play.google.com/store/apps/details?id=com.shadev.thecryptowiki"
+      "ios": "#",
+      "android": "#"
     }
   },
   {
@@ -96,8 +96,8 @@
     "technologies": "React Native | TypeScript | Firebase",
     "image": "./assets/images/projects/tinnitushelp-app.jpg",
     "links": {
-      "ios": "https://apps.apple.com/de/app/tinnitushelp-me/id6741688965?l=en-GB",
-      "android": "https://play.google.com/store/apps/details?id=com.shadev.tinnitushelpme"
+      "ios": "#",
+      "android": "#"
     }
   },
   {
@@ -110,8 +110,8 @@
     "technologies": "Unity | C# | Blender",
     "image": "./assets/images/projects/fungi-vs-bacteria.jpg",
     "links": {
-      "github": "https://github.com/oktayshakirov/fungi-vs-bacteria",
-      "figma": "https://www.figma.com/design/2WRQK888SfMS39zy0vgoIM/Fungi-vs-Bacteria?node-id=0-1&t=2dKGxUSf1MgOMDbK-1"
+      "github": "#",
+      "figma": "#"
     }
   },
   {
@@ -124,8 +124,8 @@
     "technologies": "Unity | C#",
     "image": "./assets/images/projects/snowman-run.png",
     "links": {
-      "ios": "https://apps.apple.com/de/app/snowman-run-winter-escape/id6739736566?l=en-GB",
-      "android": "https://play.google.com/store/apps/details?id=com.ShaDev.SnowmanRun"
+      "ios": "#",
+      "android": "#"
     }
   },
   {
@@ -139,8 +139,8 @@
     "technologies": "Next.js | React.js | API's",
     "image": "./assets/images/projects/crypto-wiki.png",
     "links": {
-      "preview": "https://www.thecrypto.wiki",
-      "github": "https://github.com/oktayshakirov/crypto-wiki"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -154,7 +154,7 @@
     "technologies": "React.js | Chakra UI",
     "image": "./assets/images/projects/myfitphoto.png",
     "links": {
-      "preview": "https://myfitphoto.com/"
+      "preview": "#"
     }
   },
   {
@@ -168,8 +168,8 @@
     "technologies": "Next.js | TypeScript | Material-UI",
     "image": "./assets/images/projects/tinnitus-blog.png",
     "links": {
-      "preview": "https://www.tinnitushelp.me/",
-      "github": "https://github.com/oktayshakirov/tinnitus-blog"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -183,8 +183,8 @@
     "technologies": "React.js | Chakra UI",
     "image": "./assets/images/projects/clonings.png",
     "links": {
-      "preview": "https://clonings.ai/",
-      "github": "https://github.com/oktayshakirov/clonings-ai"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -197,7 +197,7 @@
     "technologies": "Wordpress",
     "image": "./assets/images/projects/cortextual.png",
     "links": {
-      "preview": "https://cortextual.ai"
+      "preview": "#"
     }
   },
   {
@@ -211,8 +211,8 @@
     "technologies": "Figma | React.js | Chakra UI",
     "image": "./assets/images/projects/fashionswap.png",
     "links": {
-      "preview": "https://www.fashionswap.ai/",
-      "figma": "https://www.figma.com/file/E0LCV0R8Z1quFISQnEXsJH/FashionSwap?type=design&node-id=34%3A88&mode=design&t=5Zdkopqchsl0NiUf-1"
+      "preview": "#",
+      "figma": "#"
     }
   },
   {
@@ -226,8 +226,8 @@
     "technologies": "Figma | React.js | Chakra UI",
     "image": "./assets/images/projects/contour.png",
     "links": {
-      "preview": "https://contour.bg",
-      "figma": "https://www.figma.com/file/8mCYvhRkKW89CIWHRAy9RU/Contour.bg-(Demo)?type=design&t=PKX6RVacjJ6Nuqei-6"
+      "preview": "#",
+      "figma": "#"
     }
   },
   {
@@ -242,8 +242,8 @@
     "technologies": "Figma | React.js | Chakra UI",
     "image": "./assets/images/projects/mybestwishes.png",
     "links": {
-      "preview": "https://mybestwishes.ai/",
-      "figma": "https://www.figma.com/file/Q8TREoM195xySYKnNjjMun/MyBestWishes-2.0?type=design&mode=design&t=zuAWuwuUFFqp1leb-0"
+      "preview": "#",
+      "figma": "#"
     }
   },
   {
@@ -258,8 +258,8 @@
     "technologies": "Figma | React.js | Chakra UI",
     "image": "./assets/images/projects/myworkphoto.png",
     "links": {
-      "preview": "https://myworkphoto.com/",
-      "figma": "https://www.figma.com/file/eUARUbGIBm2KuNNnvdXDkA/MyWorkPhoto?type=design&mode=design&t=zuAWuwuUFFqp1leb-1"
+      "preview": "#",
+      "figma": "#"
     }
   },
   {
@@ -273,8 +273,8 @@
     "technologies": "React.js | Strapi.js | MySQL",
     "image": "./assets/images/projects/ogno-dashboard.png",
     "links": {
-      "preview": "https://ogno.netlify.app/",
-      "github": "https://github.com/oktayshakirov/marketing-dashboard"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -287,7 +287,7 @@
     "technologies": "Drupal | PHP | CSS",
     "image": "./assets/images/projects/bayer-askmed.png",
     "links": {
-      "preview": "https://askmed.bayer.com/"
+      "preview": "#"
     }
   },
   {
@@ -300,8 +300,8 @@
     "technologies": "Next.js | TypeScript | MySQL",
     "image": "./assets/images/projects/enemzet.png",
     "links": {
-      "preview": "https://enemzet.bg/",
-      "github": "https://github.com/En-Em-Zet"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -315,8 +315,8 @@
     "technologies": "React.js | Node.js | MySQL | Sass",
     "image": "./assets/images/projects/watch_store.png",
     "links": {
-      "preview": "https://timeazon.netlify.app/",
-      "github": "https://github.com/oktayshakirov/timeazon-fullstack"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -329,8 +329,8 @@
     "technologies": "JavaScript | API's | CSS",
     "image": "./assets/images/projects/weather-app.png",
     "links": {
-      "preview": "https://oktayshakirov.github.io/weather-app/",
-      "github": "https://github.com/oktayshakirov/weather-app"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -343,8 +343,8 @@
     "technologies": "JavaScript | CSS",
     "image": "./assets/images/projects/pigletz-matching.png",
     "links": {
-      "preview": "https://oktayshakirov.github.io/pigletz-matching/",
-      "github": "https://github.com/oktayshakirov/pigletz-matching"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -357,8 +357,8 @@
     "technologies": "PHP | CSV Data | CSS",
     "image": "./assets/images/projects/team-manager.png",
     "links": {
-      "preview": "http://oktayshakirov.rf.gd/team-manager/",
-      "github": "https://github.com/oktayshakirov/team-manager"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -372,8 +372,8 @@
     "technologies": "JavaScript | CSS | HTML",
     "image": "./assets/images/projects/portfolio.png",
     "links": {
-      "preview": "/",
-      "github": "https://github.com/oktayshakirov/portfolio"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -386,8 +386,8 @@
     "technologies": "PHP | CSS | HTML",
     "image": "./assets/images/projects/quiz.png",
     "links": {
-      "preview": "https://oktayshakirov.000webhostapp.com/quiz",
-      "github": "https://github.com/oktayshakirov/quiz"
+      "preview": "#",
+      "github": "#"
     }
   },
   {
@@ -400,7 +400,7 @@
     "technologies": "Wordpress | Android SDK",
     "image": "./assets/images/projects/berlinew.jpg",
     "links": {
-      "preview": "https://berlinew.wordpress.com/categories"
+      "preview": "#"
     }
   }
 ]
