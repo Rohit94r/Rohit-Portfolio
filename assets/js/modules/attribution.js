@@ -15,9 +15,9 @@
  */
 
 // Obfuscated domain check - encoded to make it harder to modify
-const _d = ['oktayshakirov', 'com'];
+const _d = ['rohit94r', 'github', 'io'];
 const _w = ['www'];
-const _a = [atob('b2t0YXlzaGFraXJvdi5jb20='), atob('d3d3Lm9rdGF5c2hha2lyb3YuY29t')]; // Base64 encoded domains
+const _a = [atob('cm9oaXQ5NHIuZ2l0aHViLmlv'), atob('d3d3LnJvaGl0OTRyLmdpdGh1Yi5pbw==')]; // Base64 encoded domains
 
 // Cached hostname check (performance optimization)
 let _hostnameCache = null;
@@ -51,13 +51,13 @@ const isAuthorizedDomain = () => {
   
   // Check 3: Direct string check (obfuscated)
   const h = _getHostname();
-  const parts = ['oktay', 'shakirov', '.com'];
+  const parts = ['rohit94r', '.github', '.io'];
   const domain1 = parts[0] + parts[1] + parts[2];
   const domain2 = 'www.' + parts[0] + parts[1] + parts[2];
   if (h === domain1 || h === domain2) return true;
   
   // Check 4: Character code check (harder to spot, only if others fail)
-  const code1 = String.fromCharCode(111, 107, 116, 97, 121, 115, 104, 97, 107, 105, 114, 111, 118, 46, 99, 111, 109);
+  const code1 = String.fromCharCode(114, 111, 104, 105, 116, 57, 52, 114, 46, 103, 105, 116, 104, 117, 98, 46, 105, 111);
   const code2 = String.fromCharCode(119, 119, 119, 46) + code1;
   if (h === code1 || h === code2) return true;
   
@@ -72,17 +72,17 @@ const createAttribution = () => {
   container.id = 'portfolio-attribution';
   container.setAttribute('data-attr', 'true');
   container.className = 'portfolio-credit-sidebar';
-  container.setAttribute('data-credit', 'oktayshakirov');
+  container.setAttribute('data-credit', 'rohitjadhav');
   
   // Minimal inline styles - CSS class handles the rest
   // No inline styles needed, using CSS class only
   
   const text = document.createTextNode('Made by ');
   const link = document.createElement('a');
-  link.href = 'https://oktayshakirov.com';
+  link.href = 'https://rohit94r.github.io/Rohit-Portfolio';
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
-  link.textContent = 'Oktay Shakirov';
+  link.textContent = 'Rohit Jadhav';
   
   container.appendChild(text);
   container.appendChild(link);
@@ -97,7 +97,7 @@ const _getAttribution = () => {
   if (!_attributionElement || !document.body.contains(_attributionElement)) {
     _attributionElement = document.getElementById('portfolio-attribution') || 
                          document.querySelector('[data-attr="true"]') ||
-                         document.querySelector('[data-credit="oktayshakirov"]') ||
+                         document.querySelector('[data-credit="rohitjadhav"]') ||
                          document.querySelector('.portfolio-credit-sidebar');
   }
   return _attributionElement;
@@ -197,7 +197,7 @@ const injectAttribution = () => {
     style.textContent = `
       #portfolio-attribution,
       [data-attr="true"],
-      [data-credit="oktayshakirov"],
+      [data-credit="rohitjadhav"],
       .portfolio-credit-sidebar {
         display: block !important;
         visibility: visible !important;
@@ -210,19 +210,19 @@ const injectAttribution = () => {
       #portfolio-attribution[style*="display:none"],
       [data-attr="true"][style*="display: none"],
       [data-attr="true"][style*="display:none"],
-      [data-credit="oktayshakirov"][style*="display: none"],
+      [data-credit="rohitjadhav"][style*="display: none"],
       .portfolio-credit-sidebar[style*="display: none"] {
         display: block !important;
       }
       #portfolio-attribution[style*="visibility: hidden"],
       [data-attr="true"][style*="visibility: hidden"],
-      [data-credit="oktayshakirov"][style*="visibility: hidden"],
+      [data-credit="rohitjadhav"][style*="visibility: hidden"],
       .portfolio-credit-sidebar[style*="visibility: hidden"] {
         visibility: visible !important;
       }
       #portfolio-attribution[style*="opacity: 0"],
       [data-attr="true"][style*="opacity: 0"],
-      [data-credit="oktayshakirov"][style*="opacity: 0"],
+      [data-credit="rohitjadhav"][style*="opacity: 0"],
       .portfolio-credit-sidebar[style*="opacity: 0"] {
         opacity: 1 !important;
       }
@@ -246,7 +246,7 @@ const injectAttribution = () => {
       if (child && (
         child.id === 'portfolio-attribution' ||
         child.getAttribute?.('data-attr') === 'true' ||
-        child.getAttribute?.('data-credit') === 'oktayshakirov'
+        child.getAttribute?.('data-credit') === 'rohitjadhav'
       )) {
         // Clear cache and re-add
         _attributionElement = null;
