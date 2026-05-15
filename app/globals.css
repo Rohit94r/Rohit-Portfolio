@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /**
    * colors
@@ -413,6 +417,8 @@ main {
 .info-content {
   position: relative;
   z-index: 2;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .info-content .name {
@@ -432,9 +438,13 @@ main {
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
   width: min(100%, 230px);
+  max-width: min(230px, calc(100vw - 155px));
   padding: 6px 12px;
   border-radius: 18px;
   animation: glow 5s ease-in-out infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile-headline {
@@ -445,6 +455,10 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.45;
   text-align: center;
+}
+
+.sidebar:not(.active) .profile-headline {
+  display: none;
 }
 
 @keyframes glow {
@@ -506,6 +520,11 @@ main {
 .sidebar.active .sidebar-info_more {
   opacity: 1;
   visibility: visible;
+}
+
+.sidebar.active .info-content .title {
+  white-space: normal;
+  overflow: visible;
 }
 
 .contacts-list {
@@ -626,9 +645,11 @@ main {
 }
 
 .navbar-link {
+  display: block;
   color: var(--light-gray);
   font-size: var(--fs-8);
   padding: 20px 7px;
+  white-space: nowrap;
   transition: color var(--transition-1);
 }
 
@@ -689,15 +710,27 @@ main {
   min-height: 220px;
   overflow: hidden;
   border-radius: 14px;
-  background: var(--eerie-black-1);
+  clip-path: inset(0 round 14px);
+  contain: paint;
+  background:
+    radial-gradient(
+      circle at center,
+      hsla(215, 72%, 52%, 0.12),
+      transparent 58%
+    ),
+    var(--eerie-black-1);
   box-shadow: var(--shadow-2);
 }
 
 .journey-image-box img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  inset: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
   transition:
     opacity 0.28s ease,
     transform 0.28s ease;
@@ -720,6 +753,7 @@ main {
   border-radius: 10px;
   background: hsla(240, 3%, 13%, 0.86);
   box-shadow: var(--shadow-1);
+  z-index: 2;
 }
 
 .journey-content {
@@ -785,7 +819,7 @@ main {
   height: 100%;
   border-radius: inherit;
   background: var(--text-gradient-yellow);
-  animation: journey-progress-fill 2s linear infinite;
+  animation: journey-progress-fill 4s linear infinite;
   transform-origin: left;
 }
 
@@ -799,6 +833,16 @@ main {
   }
 }
 
+@keyframes skills-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .journey-progress span {
     animation: none;
@@ -806,6 +850,11 @@ main {
 
   .journey-image-box img {
     transition: none;
+  }
+
+  [style*="skills-marquee"],
+  [class*="skills-marquee"] {
+    animation: none !important;
   }
 }
 
@@ -2390,6 +2439,13 @@ main {
 
   .info-content .title {
     margin: auto;
+    max-width: 230px;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .profile-headline {
+    display: block;
   }
 
   .info_more-btn {
@@ -2982,6 +3038,13 @@ select {
 .social-link svg,
 .calendly-icon-link svg {
   display: block;
+}
+
+.icon-box svg,
+.info_more-btn svg,
+.calendly-icon-link svg {
+  width: 1em;
+  height: 1em;
 }
 
 .social-link svg {
