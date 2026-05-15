@@ -142,9 +142,13 @@ export const generateFilterSelectHTML = (categories) => {
  * @returns {string} HTML string
  */
 export const generateTechnologyHTML = (tech) => {
+  const content = tech.image
+    ? `<img src="${tech.image}" alt="${tech.alt}" id="${tech.id}">`
+    : `<span class="technology-chip">${tech.name}</span>`;
+
   return `
     <li class="technologies-item">
-      <img src="${tech.image}" alt="${tech.alt}" id="${tech.id}">
+      ${content}
     </li>
   `;
 };
@@ -155,13 +159,19 @@ export const generateTechnologyHTML = (tech) => {
  * @returns {string} HTML string
  */
 export const generateCertificateHTML = (cert) => {
+  const imageHTML = cert.image
+    ? `
+      <div class="certificate-container">
+        <img src="${cert.image}" alt="${cert.title} Certificate">
+      </div>
+    `
+    : "";
+
   return `
     <li class="timeline-item">
       <h4 class="h4 timeline-item-title">${cert.title}</h4>
       <p class="timeline-text">${cert.issuer}</p>
-      <div class="certificate-container">
-        <img src="${cert.image}" alt="${cert.title} Certificate">
-      </div>
+      ${imageHTML}
     </li>
   `;
 };
