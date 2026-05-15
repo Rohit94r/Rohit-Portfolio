@@ -10,32 +10,33 @@ export const initStructuredData = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Oktay Shakirov",
-    "jobTitle": "Full-Stack Software Developer",
-    "url": "https://oktayshakirov.com",
+    "name": "Rohit Jadhav",
+    "jobTitle": "Google Gemini Student Ambassador | Full Stack Developer | Ex-SDE Intern @ Bluestock | 7x National Hackathon Winner",
+    "url": "https://github.com/Rohit94r/Rohit-Portfolio",
     "sameAs": [
-      "https://github.com/oktayshakirov",
-      "https://www.linkedin.com/in/oktayshakirov",
-      "https://www.instagram.com/oktay.shakirov/",
-      "https://twitter.com/oktayshakirov"
+      "https://github.com/Rohit94r",
+      "https://www.linkedin.com/in/rohit-jadhav94/",
+      "https://www.instagram.com/dev.by.rohit/",
+      "https://x.com/RohitJadhav9409"
     ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Berlin",
-      "addressCountry": "Germany"
+      "addressLocality": "Mumbai",
+      "addressCountry": "India"
     },
-    "email": "info@oktayshakirov.com",
+    "email": "rjdhav67@gmail.com",
     "knowsAbout": [
-      "Web Development",
-      "Mobile App Development",
-      "Full-Stack Development",
+      "Full Stack Web Development",
+      "AI SaaS Products",
+      "Startup Product Development",
+      "AI Integrations & Automation",
       "JavaScript",
       "TypeScript",
       "React",
-      "React Native",
+      "Next.js",
       "Node.js",
-      "PHP",
-      "MySQL"
+      "Supabase",
+      "OpenAI APIs"
     ]
   };
 
