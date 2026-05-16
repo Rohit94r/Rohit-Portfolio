@@ -149,9 +149,9 @@ const githubUsername = "Rohit94r";
 const githubUrl = "https://github.com/Rohit94r";
 
 const cardClass =
-  "relative rounded-[14px] border border-white/10 bg-white/[0.045] p-5 shadow-glass backdrop-blur-md md:p-7";
+  "relative rounded-[14px] border border-portfolio-border bg-portfolio-card/85 p-5 shadow-glass backdrop-blur-md md:p-7";
 const sectionTitleClass =
-  "mb-5 flex justify-center text-center text-[24px] font-semibold text-white";
+  "mb-5 flex justify-center text-center text-[24px] font-semibold text-portfolio-text";
 const mutedTextClass = "text-[15px] leading-7 text-portfolio-muted";
 
 type Contribution = {
@@ -220,8 +220,8 @@ function JourneySection() {
   return (
     <section className="mb-9">
       <h3 className={sectionTitleClass}>Journey</h3>
-      <div className="grid gap-5 rounded-[14px] border border-white/10 bg-white/[0.045] p-4 shadow-glass backdrop-blur-md md:grid-cols-2 md:p-6">
-        <figure className="relative min-h-[280px] overflow-hidden rounded-[14px] border border-white/10 bg-[#10131d] [clip-path:inset(0_round_14px)] [contain:paint]">
+      <div className="grid gap-5 rounded-[14px] border border-portfolio-border bg-portfolio-card/85 p-4 shadow-glass backdrop-blur-md md:grid-cols-2 md:p-6">
+        <figure className="relative min-h-[280px] overflow-hidden rounded-[14px] border border-portfolio-border bg-portfolio-soft/80 [clip-path:inset(0_round_14px)] [contain:paint]">
           <img
             className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-25 blur-xl"
             src={item.image}
@@ -233,30 +233,30 @@ function JourneySection() {
             src={item.image}
             alt={item.alt}
           />
-          <figcaption className="absolute left-4 top-4 z-10 rounded-[10px] border border-portfolio-gold/30 bg-black/70 px-3 py-1 text-[13px] font-semibold text-portfolio-gold">
+          <figcaption className="absolute left-4 top-4 z-10 rounded-[10px] border border-portfolio-gold/30 bg-white/90 px-3 py-1 text-[13px] font-semibold text-portfolio-gold">
             {item.year}
           </figcaption>
         </figure>
 
-        <div className="flex min-h-[260px] flex-col justify-center rounded-[14px] border border-white/10 bg-black/15 p-6">
+        <div className="flex min-h-[260px] flex-col justify-center rounded-[14px] border border-portfolio-border bg-portfolio-soft/70 p-6">
           <p className="mb-2 text-xs font-semibold uppercase text-portfolio-accent">
             {item.kicker}
           </p>
-          <h4 className="mb-3 text-[20px] font-semibold leading-snug text-white">
+          <h4 className="mb-3 text-[20px] font-semibold leading-snug text-portfolio-text">
             {item.title}
           </h4>
           <p className={mutedTextClass}>{item.description}</p>
           <ul className="mt-5 flex flex-wrap gap-2">
             {item.tags.map((tag) => (
               <li
-                className="rounded-lg bg-white/[0.06] px-3 py-2 text-xs text-portfolio-muted"
+                className="rounded-lg bg-portfolio-soft/80 px-3 py-2 text-xs text-portfolio-muted"
                 key={tag}
               >
                 {tag}
               </li>
             ))}
           </ul>
-          <div className="mt-6 h-1 overflow-hidden rounded-full bg-white/10">
+          <div className="mt-6 h-1 overflow-hidden rounded-full bg-portfolio-border/70">
             <span
               className="block h-full origin-left rounded-full bg-gradient-to-r from-portfolio-accent to-portfolio-gold [animation:journey-progress-fill_4s_linear_infinite]"
               key={index}
@@ -434,7 +434,7 @@ function GitHubContributions() {
             </div>
 
             <div className="grid gap-3 pt-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-white/10 bg-black/20 p-4 text-center">
+              <div className="rounded-xl border border-portfolio-border bg-portfolio-soft/80 p-4 text-center">
                 <span className="block text-2xl font-semibold text-portfolio-gold">
                   {calendar.stats.totalContributions.toLocaleString()}
                 </span>
@@ -442,7 +442,7 @@ function GitHubContributions() {
                   Total Contributions
                 </small>
               </div>
-              <div className="rounded-xl border border-white/10 bg-black/20 p-4 text-center">
+              <div className="rounded-xl border border-portfolio-border bg-portfolio-soft/80 p-4 text-center">
                 <span className="block text-2xl font-semibold text-portfolio-gold">
                   {calendar.stats.activeDays}
                 </span>
@@ -450,7 +450,7 @@ function GitHubContributions() {
                   Commit Days
                 </small>
               </div>
-              <div className="rounded-xl border border-white/10 bg-black/20 p-4 text-center">
+              <div className="rounded-xl border border-portfolio-border bg-portfolio-soft/80 p-4 text-center">
                 <span className="block text-2xl font-semibold text-portfolio-gold">
                   {calendar.stats.currentStreak}
                 </span>
@@ -458,7 +458,7 @@ function GitHubContributions() {
                   Current Streak
                 </small>
               </div>
-              <div className="rounded-xl border border-white/10 bg-black/20 p-4 text-center">
+              <div className="rounded-xl border border-portfolio-border bg-portfolio-soft/80 p-4 text-center">
                 <span className="block text-2xl font-semibold text-portfolio-gold">
                   {calendar.stats.longestStreak}
                 </span>
@@ -510,7 +510,7 @@ export default function HomePage() {
                   alt={area.alt}
                 />
                 <div>
-                  <h4 className="mb-2 text-[17px] font-semibold text-white">
+                  <h4 className="mb-2 text-[17px] font-semibold text-portfolio-text">
                     {area.title}
                   </h4>
                   <p className={mutedTextClass}>{area.description}</p>
@@ -523,11 +523,11 @@ export default function HomePage() {
 
       <section className="mb-9">
         <h3 className={sectionTitleClass}>Development Skills</h3>
-        <div className="overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.045] p-5 shadow-glass backdrop-blur-md [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+        <div className="overflow-hidden rounded-[14px] border border-portfolio-border bg-portfolio-card/85 p-5 shadow-glass backdrop-blur-md [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
           <ul className="flex w-max gap-4 py-2 [animation:skills-marquee_34s_linear_infinite] hover:[animation-play-state:paused]">
             {[...skills, ...skills].map((skill, skillIndex) => (
               <li
-                className="group flex min-w-[116px] flex-col items-center gap-3 rounded-xl border border-white/10 bg-black/20 px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-portfolio-gold/60 hover:bg-portfolio-gold/10 hover:shadow-[0_0_30px_rgba(255,190,80,0.38)]"
+                className="group flex min-w-[116px] flex-col items-center gap-3 rounded-xl border border-portfolio-border bg-portfolio-soft/80 px-4 py-4 transition duration-300 hover:-translate-y-1 hover:border-portfolio-gold/60 hover:bg-portfolio-gold/10 hover:shadow-[0_0_30px_rgba(122,149,143,0.16)]"
                 key={`${skill.name}-${skillIndex}`}
               >
                 <img
@@ -536,7 +536,7 @@ export default function HomePage() {
                   alt={skill.name}
                   title={skill.name}
                 />
-                <span className="text-center text-[11px] text-portfolio-muted transition group-hover:text-white">
+                <span className="text-center text-[11px] text-portfolio-muted transition group-hover:text-portfolio-text">
                   {skill.name}
                 </span>
               </li>
@@ -557,7 +557,7 @@ export default function HomePage() {
                   alt={strength.alt}
                 />
                 <div>
-                  <h4 className="mb-2 text-[17px] font-semibold text-white">
+                  <h4 className="mb-2 text-[17px] font-semibold text-portfolio-text">
                     {strength.title}
                   </h4>
                   <p className={mutedTextClass}>{strength.description}</p>

@@ -33,7 +33,7 @@ const projectCategories = [
 ];
 
 // Edit project cards here. Add more screenshots inside each `images` array.
-// Use `imageClass: "h-full w-full object-cover"` for full box cover.
+// Use `imageClass: "h-full w-full object-contain p-2 sm:p-3"` to show the full image cleanly.
 const projects: Project[] = [
   {
     title: "Gargi Surgical & Healthcare",
@@ -47,32 +47,32 @@ const projects: Project[] = [
       {
         src: "/assets/projects/gargi1.png",
         alt: "Gargi Surgical & Healthcare homepage screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/projects/gargi2.png",
         alt: "Gargi Surgical & Healthcare services screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/projects/gargi3.png",
         alt: "Gargi Surgical & Healthcare medical equipment screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/projects/gargi4.png",
         alt: "Gargi Surgical & Healthcare oxygen cylinder support screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/projects/gargi5.png",
         alt: "Gargi Surgical & Healthcare wheelchair rental screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/projects/gargi6.png",
         alt: "Gargi Surgical & Healthcare contact section screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -92,12 +92,12 @@ const projects: Project[] = [
       {
         src: "/assets/projects/apnaai.png",
         alt: "ApnaAI product preview",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/home/journey/apnaai.png",
         alt: "ApnaAI journey screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -117,12 +117,12 @@ const projects: Project[] = [
       {
         src: "/assets/projects/neexmeet.png",
         alt: "NeexMeet product preview",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/home/journey/neexmeet.png",
         alt: "NeexMeet journey screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -142,12 +142,12 @@ const projects: Project[] = [
       {
         src: "/assets/projects/roomezes.png",
         alt: "Roomezes product preview",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/home/journey/roomezes.png",
         alt: "Roomezes journey screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -158,7 +158,7 @@ const projects: Project[] = [
 ];
 
 const cardClass =
-  "rounded-[18px] border border-white/10 bg-white/[0.045] p-5 shadow-glass backdrop-blur-md md:p-6";
+  "rounded-[18px] border border-portfolio-border bg-portfolio-card/85 p-5 shadow-glass backdrop-blur-md md:p-6";
 
 function ProjectCard({ project }: { project: Project }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -176,7 +176,7 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <li className={cardClass}>
-      <figure className="relative mb-5 min-h-[360px] overflow-hidden rounded-[16px] border border-white/10 bg-[#10131d] [clip-path:inset(0_round_16px)] [contain:paint] md:min-h-[430px]">
+      <figure className="relative mb-5 min-h-[360px] overflow-hidden rounded-[16px] border border-portfolio-border bg-portfolio-soft/80 [clip-path:inset(0_round_16px)] [contain:paint] md:min-h-[430px]">
         <img
           className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-20 blur-xl"
           src={image.src}
@@ -194,7 +194,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="mb-3 flex flex-wrap gap-2">
           {project.categories.map((category) => (
             <span
-              className="rounded-full bg-white/[0.06] px-3 py-1 text-xs text-portfolio-muted"
+              className="rounded-full bg-portfolio-soft/80 px-3 py-1 text-xs text-portfolio-muted"
               key={category}
             >
               {category}
@@ -202,7 +202,7 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <h3 className="mb-2 text-[24px] font-semibold text-white">
+        <h3 className="mb-2 text-[24px] font-semibold text-portfolio-text">
           {project.title}
         </h3>
         <p className="mb-1 text-sm text-portfolio-gold">{project.status}</p>
@@ -216,7 +216,7 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {project.links.preview && (
               <a
-                className="rounded-lg bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(255,190,80,0.25)]"
+                className="rounded-lg bg-portfolio-soft/80 px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(122,149,143,0.14)]"
                 href={project.links.preview}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -226,7 +226,7 @@ function ProjectCard({ project }: { project: Project }) {
             )}
             {project.links.github && (
               <a
-                className="rounded-lg bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(255,190,80,0.25)]"
+                className="rounded-lg bg-portfolio-soft/80 px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(122,149,143,0.14)]"
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -261,7 +261,7 @@ export default function ProjectsPage() {
                 className={`text-[15px] transition ${
                   category === selectedCategory
                     ? "text-portfolio-gold"
-                    : "text-portfolio-muted hover:text-white"
+                    : "text-portfolio-muted hover:text-portfolio-text"
                 }`}
                 type="button"
                 onClick={() => setSelectedCategory(category)}
@@ -274,7 +274,7 @@ export default function ProjectsPage() {
 
         <div className="mb-7 md:hidden">
           <select
-            className="w-full rounded-[14px] border border-white/10 bg-[#181820] px-4 py-3 text-sm text-portfolio-muted"
+            className="w-full rounded-[14px] border border-portfolio-border bg-white px-4 py-3 text-sm text-portfolio-muted"
             value={selectedCategory}
             onChange={(event) => setSelectedCategory(event.target.value)}
             aria-label="Select project category"

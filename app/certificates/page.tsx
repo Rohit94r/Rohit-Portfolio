@@ -162,26 +162,26 @@ export default function CertificatesPage() {
       {achievementGroup && (
         <section className="mb-12">
           <div className="mb-7 flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-portfolio-gold">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-portfolio-border bg-portfolio-soft/80 text-portfolio-gold">
               <achievementGroup.Icon aria-hidden="true" />
             </div>
-            <h3 className="text-[24px] font-semibold text-white">
+            <h3 className="text-[24px] font-semibold text-portfolio-text">
               {achievementGroup.group}
             </h3>
           </div>
 
-          <ol className="relative ml-6 space-y-8 border-l border-white/10 pl-8">
+          <ol className="relative ml-6 space-y-8 border-l border-portfolio-border pl-8">
             {achievementGroup.items.map((item) => (
               <li className="relative" key={item.title}>
-                <span className="absolute -left-[43px] top-2 h-3 w-3 rounded-full bg-portfolio-gold shadow-[0_0_0_5px_rgba(255,255,255,0.08)]" />
-                <h4 className="mb-2 text-[16px] font-semibold text-white">
+                <span className="absolute -left-[43px] top-2 h-3 w-3 rounded-full bg-portfolio-gold shadow-[0_0_0_5px_rgba(122,149,143,0.18)]" />
+                <h4 className="mb-2 text-[16px] font-semibold text-portfolio-text">
                   {item.title}
                 </h4>
                 <p className="mb-4 text-[15px] leading-7 text-portfolio-muted">
                   {item.issuer}
                 </p>
                 {item.image && (
-                  <div className="inline-flex rounded-[10px] border-[10px] border-black bg-black p-1">
+                  <div className="inline-flex rounded-[10px] border-[10px] border-portfolio-soft bg-white p-1">
                     <img
                       className={item.imageClass}
                       src={item.image}
@@ -197,10 +197,10 @@ export default function CertificatesPage() {
 
       <section className="mb-12">
         <div className="mb-7 flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-portfolio-gold">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-portfolio-border bg-portfolio-soft/80 text-portfolio-gold">
             <FaTrophy aria-hidden="true" />
           </div>
-          <h3 className="text-[24px] font-semibold text-white">
+          <h3 className="text-[24px] font-semibold text-portfolio-text">
             Hackathons & Certifications
           </h3>
         </div>
@@ -208,10 +208,10 @@ export default function CertificatesPage() {
         <ul className="grid gap-5 md:grid-cols-2">
           {certifications.map((certificate) => (
             <li
-              className="flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.045] shadow-glass backdrop-blur-md"
+              className="flex h-full flex-col overflow-hidden rounded-[18px] border border-portfolio-border bg-portfolio-card/85 shadow-glass backdrop-blur-md"
               key={certificate.title}
             >
-              <figure className="relative h-[210px] shrink-0 overflow-hidden bg-[#10131d] [clip-path:inset(0_round_18px)] [contain:paint] sm:h-[230px] md:h-[240px]">
+              <figure className="relative h-[210px] shrink-0 overflow-hidden bg-portfolio-soft/80 [clip-path:inset(0_round_18px)] [contain:paint] sm:h-[230px] md:h-[240px]">
                 <img
                   className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-20 blur-xl"
                   src={certificate.image}
@@ -223,7 +223,7 @@ export default function CertificatesPage() {
                   src={certificate.image}
                   alt={certificate.alt}
                 />
-                <span className="absolute left-3 top-3 z-10 rounded-[10px] border border-portfolio-gold/30 bg-black/70 px-3 py-1 text-[12px] font-semibold text-portfolio-gold">
+                <span className="absolute left-3 top-3 z-10 rounded-[10px] border border-portfolio-gold/30 bg-white/90 px-3 py-1 text-[12px] font-semibold text-portfolio-gold">
                   {certificate.year}
                 </span>
               </figure>
@@ -232,7 +232,7 @@ export default function CertificatesPage() {
                 <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-portfolio-gold">
                   {certificate.kicker}
                 </p>
-                <h4 className="mb-1 text-[20px] font-semibold text-white">
+                <h4 className="mb-1 text-[20px] font-semibold text-portfolio-text">
                   {certificate.title}
                 </h4>
                 <p className="mb-3 text-[14px] text-portfolio-accent">
@@ -245,7 +245,7 @@ export default function CertificatesPage() {
                 <ul className="mt-auto flex flex-wrap gap-2 pt-4">
                   {certificate.tags.map((tag) => (
                     <li
-                      className="rounded-full bg-white/[0.06] px-2.5 py-1 text-[11px] text-portfolio-muted"
+                      className="rounded-full bg-portfolio-soft/80 px-2.5 py-1 text-[11px] text-portfolio-muted"
                       key={tag}
                     >
                       {tag}
@@ -262,24 +262,24 @@ export default function CertificatesPage() {
         {remainingCertificateGroups.map(({ group, Icon, items }) => (
           <section key={group}>
             <div className="mb-7 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-portfolio-gold">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-portfolio-border bg-portfolio-soft/80 text-portfolio-gold">
                 <Icon aria-hidden="true" />
               </div>
-              <h3 className="text-[24px] font-semibold text-white">{group}</h3>
+              <h3 className="text-[24px] font-semibold text-portfolio-text">{group}</h3>
             </div>
 
-            <ol className="relative ml-6 space-y-8 border-l border-white/10 pl-8">
+            <ol className="relative ml-6 space-y-8 border-l border-portfolio-border pl-8">
               {items.map((item) => (
                 <li className="relative" key={item.title}>
-                  <span className="absolute -left-[43px] top-2 h-3 w-3 rounded-full bg-portfolio-gold shadow-[0_0_0_5px_rgba(255,255,255,0.08)]" />
-                  <h4 className="mb-2 text-[16px] font-semibold text-white">
+                  <span className="absolute -left-[43px] top-2 h-3 w-3 rounded-full bg-portfolio-gold shadow-[0_0_0_5px_rgba(122,149,143,0.18)]" />
+                  <h4 className="mb-2 text-[16px] font-semibold text-portfolio-text">
                     {item.title}
                   </h4>
                   <p className="mb-4 text-[15px] leading-7 text-portfolio-muted">
                     {item.issuer}
                   </p>
                   {item.image && (
-                    <div className="inline-flex rounded-[10px] border-[10px] border-black bg-black p-1">
+                    <div className="inline-flex rounded-[10px] border-[10px] border-portfolio-soft bg-white p-1">
                       <img
                         className={item.imageClass}
                         src={item.image}

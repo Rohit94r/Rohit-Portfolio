@@ -24,7 +24,7 @@ type Product = {
 };
 
 // Edit product cards here. Add more screenshots inside each `images` array.
-// Use `imageClass: "h-full w-full object-cover"` for full box cover.
+// Use `imageClass: "h-full w-full object-contain p-2 sm:p-3"` to show the full image cleanly.
 const products: Product[] = [
   {
     title: "ApnaAI",
@@ -37,12 +37,12 @@ const products: Product[] = [
       {
         src: "/assets/projects/apnaai.png",
         alt: "ApnaAI product preview",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/home/journey/apnaai.png",
         alt: "ApnaAI journey screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -61,12 +61,12 @@ const products: Product[] = [
       {
         src: "/assets/projects/neexmeet.png",
         alt: "NeexMeet product preview",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/home/journey/neexmeet.png",
         alt: "NeexMeet journey screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -85,12 +85,12 @@ const products: Product[] = [
       {
         src: "/assets/projects/roomezes.png",
         alt: "Roomezes product preview",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
       {
         src: "/assets/home/journey/roomezes.png",
         alt: "Roomezes journey screenshot",
-        imageClass: "h-full w-full object-cover",
+        imageClass: "h-full w-full object-contain p-2 sm:p-3",
       },
     ],
     links: {
@@ -115,8 +115,8 @@ function ProductCard({ product }: { product: Product }) {
   }, [product.images.length]);
 
   return (
-    <li className="overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.045] shadow-glass backdrop-blur-md">
-      <figure className="relative min-h-[360px] overflow-hidden bg-[#10131d] [clip-path:inset(0_round_18px)] [contain:paint] md:min-h-[460px]">
+    <li className="overflow-hidden rounded-[18px] border border-portfolio-border bg-portfolio-card/85 shadow-glass backdrop-blur-md">
+      <figure className="relative min-h-[360px] overflow-hidden bg-portfolio-soft/80 [clip-path:inset(0_round_18px)] [contain:paint] md:min-h-[460px]">
         <img
           className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-20 blur-xl"
           src={image.src}
@@ -134,7 +134,7 @@ function ProductCard({ product }: { product: Product }) {
         <div className="mb-4 flex flex-wrap gap-2">
           {product.categories.map((category) => (
             <span
-              className="rounded-full bg-white/[0.06] px-3 py-1 text-xs text-portfolio-muted"
+              className="rounded-full bg-portfolio-soft/80 px-3 py-1 text-xs text-portfolio-muted"
               key={category}
             >
               {category}
@@ -145,7 +145,7 @@ function ProductCard({ product }: { product: Product }) {
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-portfolio-gold">
           {product.status}
         </p>
-        <h3 className="mb-2 text-[28px] font-semibold text-white">
+        <h3 className="mb-2 text-[28px] font-semibold text-portfolio-text">
           {product.title}
         </h3>
         <p className="mb-4 text-[16px] text-portfolio-accent">
@@ -157,7 +157,7 @@ function ProductCard({ product }: { product: Product }) {
 
         <div className="mt-7 grid gap-3 sm:grid-cols-2">
           <a
-            className="rounded-lg bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(255,190,80,0.25)]"
+            className="rounded-lg bg-portfolio-soft/80 px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(122,149,143,0.14)]"
             href={product.links.preview}
             target="_blank"
             rel="noopener noreferrer"
@@ -165,7 +165,7 @@ function ProductCard({ product }: { product: Product }) {
             Preview
           </a>
           <a
-            className="rounded-lg bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(255,190,80,0.25)]"
+            className="rounded-lg bg-portfolio-soft/80 px-4 py-3 text-center text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10 hover:shadow-[0_0_20px_rgba(122,149,143,0.14)]"
             href={product.links.github}
             target="_blank"
             rel="noopener noreferrer"

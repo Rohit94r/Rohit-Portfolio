@@ -31,7 +31,7 @@ const socials = [
 ];
 
 const cardClass =
-  "rounded-[14px] border border-white/10 bg-white/[0.045] p-7 text-center shadow-glass backdrop-blur-md";
+  "rounded-[14px] border border-portfolio-border bg-portfolio-card/85 p-7 text-center shadow-glass backdrop-blur-md";
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
@@ -46,11 +46,11 @@ export default function ContactPage() {
     <Article page="contact" title="Contact">
       <div className="space-y-6">
         <section className={cardClass}>
-          <h3 className="mb-4 text-[24px] font-semibold text-white">Email:</h3>
-          <div className="inline-flex max-w-full items-center overflow-hidden rounded-[10px] bg-white/[0.08] p-1 shadow-lg">
-            <span className="truncate px-2 text-sm text-white">{email}</span>
+          <h3 className="mb-4 text-[24px] font-semibold text-portfolio-text">Email:</h3>
+          <div className="inline-flex max-w-full items-center overflow-hidden rounded-[10px] bg-portfolio-soft/90 p-1 shadow-lg">
+            <span className="truncate px-2 text-sm text-portfolio-text">{email}</span>
             <button
-              className="rounded-md bg-white/[0.1] px-3 py-2 text-sm font-semibold text-portfolio-gold transition hover:bg-white/[0.16]"
+              className="rounded-md bg-portfolio-soft px-3 py-2 text-sm font-semibold text-portfolio-gold transition hover:bg-portfolio-gold/10"
               aria-label="Copy email address to clipboard"
               type="button"
               onClick={copyEmail}
@@ -61,27 +61,27 @@ export default function ContactPage() {
         </section>
 
         <section className={cardClass}>
-          <h3 className="mb-7 text-[24px] font-semibold text-white">
+          <h3 className="mb-7 text-[24px] font-semibold text-portfolio-text">
             Schedule Video Call With Me:
           </h3>
           <a
             href={`mailto:${email}`}
             aria-label="Schedule a video call by email"
             role="button"
-            className="inline-flex text-[80px] text-portfolio-gold transition hover:scale-110 hover:text-white"
+            className="inline-flex text-[80px] text-portfolio-gold transition hover:scale-110 hover:text-portfolio-text"
           >
             <IoVideocamOutline aria-hidden="true" />
           </a>
         </section>
 
         <section className={cardClass}>
-          <h3 className="mb-7 text-[24px] font-semibold text-white">Socials:</h3>
+          <h3 className="mb-7 text-[24px] font-semibold text-portfolio-text">Socials:</h3>
           <ul className="flex flex-wrap justify-center gap-7">
             {socials.map(({ name, href, Icon }) => (
               <li key={name}>
                 <a
                   href={href}
-                  className="text-[35px] text-portfolio-gold transition hover:scale-110 hover:text-white"
+                  className="text-[35px] text-portfolio-gold transition hover:scale-110 hover:text-portfolio-text"
                   aria-label={name}
                   target="_blank"
                   rel="noopener noreferrer"

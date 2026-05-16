@@ -8,18 +8,19 @@ module.exports = {
     extend: {
       colors: {
         portfolio: {
-          bg: "#0a0a0f",
-          panel: "rgba(20, 20, 28, 0.72)",
-          card: "rgba(28, 28, 34, 0.64)",
-          border: "rgba(255, 255, 255, 0.12)",
-          text: "#fafafa",
-          muted: "rgba(214, 214, 214, 0.7)",
-          accent: "#60a5fa",
-          gold: "#ffd766",
+          bg: "#fbfdfc",
+          panel: "#ffffff",
+          card: "#ffffff",
+          soft: "#f2f7f5",
+          border: "#d7e4e0",
+          text: "#15211f",
+          muted: "#60716d",
+          accent: "#5f7771",
+          gold: "#7A958F",
         },
       },
       boxShadow: {
-        glass: "0 24px 80px rgba(0, 0, 0, 0.28)",
+        glass: "0 24px 70px rgba(55, 84, 78, 0.12)",
       },
     },
   },
