@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import type { ReactNode } from "react";
 import { PortfolioShell } from "@/components/layout/PortfolioShell";
+import Script from "next/script";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -56,8 +57,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jakarta.variable} ${sora.variable}`}>
-        <PortfolioShell>{children}</PortfolioShell>
-      </body>
+  <PortfolioShell>{children}</PortfolioShell>
+
+  <Script
+    src="https://apnaai.online/chatBot.js"
+    data-owner-id="usr_128044582762971650"
+    strategy="afterInteractive"
+  />
+</body>
     </html>
   );
 }
