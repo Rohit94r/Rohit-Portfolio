@@ -66,28 +66,28 @@ export const focusAreas = [
   {
     title: "Full Stack Web Development",
     description:
-      "Building production-ready web apps with clean frontend experiences, secure APIs, and scalable backend systems.",
+      "End-to-end development across frontend, backend, databases, and deployment. I deliver structured, maintainable applications built with Next.js, React, and Node.js — ready for real users and long-term growth.",
     icon: "/assets/shared/icons/icon-dev.svg",
     alt: "Web development icon",
   },
   {
-    title: "Smart SaaS Products",
+    title: "SaaS Product Engineering",
     description:
-      "Creating intelligent SaaS tools for real users with fast product loops, automation, and practical integrations.",
+      "Design and build software products with clear user flows, reliable architecture, and features that solve actual problems. Experience spans authentication, dashboards, APIs, and product iterations from early build to release.",
     icon: "/assets/shared/icons/icon-frameworks.svg",
     alt: "Frameworks icon",
   },
   {
-    title: "Startup Product Development",
+    title: "Startup MVP Development",
     description:
-      "Turning startup ideas into launchable MVPs with product thinking, user flows, and reliable engineering.",
+      "Take early-stage ideas and turn them into working MVPs with defined scope, fast execution, and production-quality foundations. Strong at translating product vision into a launch-ready first version.",
     icon: "/assets/shared/icons/icon-app.svg",
     alt: "Application icon",
   },
   {
     title: "Integrations & Automation",
     description:
-      "Connecting APIs, workflows, and data sources to make products smarter and operations faster.",
+      "Connect third-party services, APIs, payment systems, and internal workflows into one cohesive product. Focus on secure implementation, clean data flow, and systems that reduce manual work.",
     icon: "/assets/shared/icons/icon-marketing.svg",
     alt: "Automation icon",
   },
