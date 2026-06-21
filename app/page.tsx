@@ -1,158 +1,27 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Article } from "@/components/layout/Article";
-import { PaginationLink } from "@/components/layout/PaginationLink";
-
-const aboutParagraphs = [
-  "Rohit Jadhav is a Full Stack Developer and AI SaaS Builder from Mumbai, India, focused on building scalable SaaS products, AI-powered tools, and modern web applications.",
-  "Google Gemini Student Ambassador | Full Stack Developer | Ex-SDE Intern @ Bluestock | 7x National Hackathon Winner.",
-  "He is building real-world products like ApnaAI and NeexMeet, combining Next.js, MERN Stack, Supabase, scalable backend systems, and AI integrations to create tools that help people work, collaborate, and grow faster.",
-];
-
-const journeyItems = [
-  {
-    image: "/assets/home/journey/apnaai.png",
-    alt: "ApnaAI product screen",
-    year: "2026",
-    kicker: "AI SaaS Builder",
-    title: "Building Scalable SaaS Products",
-    description:
-      "Building AI-powered SaaS applications, productivity tools, and scalable web platforms using Next.js, MERN Stack, Supabase, and AI integrations.",
-    tags: ["Next.js", "MERN Stack", "Supabase"],
-  },
-  {
-    image: "/assets/home/journey/googleamb.png",
-    alt: "Google Gemini Student Ambassador 2026",
-    year: "2026",
-    kicker: "Google Ambassador Journey",
-    title: "Selected as Google Gemini Student Ambassador",
-    description:
-      "Chosen as a Google Gemini Student Ambassador 2026 to promote AI awareness, organize campus initiatives, guide students in AI tools, and build an innovative tech community.",
-    tags: ["Google Gemini", "AI", "Community", "Leadership"],
-  },
-  {
-    image: "/assets/home/journey/neexmeet.png",
-    alt: "NeexMeet product screen",
-    year: "2026",
-    kicker: "Founder Journey",
-    title: "Founder of NeexMeet",
-    description:
-      "Creating collaboration-focused software for meetings, communities, and real-world communication workflows.",
-    tags: ["Collaboration", "Meetings", "Web Apps"],
-  },
-  {
-    image: "/assets/home/journey/roomezes.png",
-    alt: "Roomezes product screen",
-    year: "2025",
-    kicker: "Startup Product Development",
-    title: "Your Campus Living & Services Hub",
-    description:
-      "Connect with fellow students, find rooms, order food, discover events, and access all campus services in one place.",
-    tags: ["MVPs", "Product", "Execution"],
-  },
-  
-];
-
-const focusAreas = [
-  {
-    title: "Full Stack Web Development",
-    description:
-      "Building production-ready web apps with clean frontend experiences, secure APIs, and scalable backend systems.",
-    icon: "/assets/shared/icons/icon-dev.svg",
-    alt: "Web development icon",
-  },
-  {
-    title: "AI SaaS Products",
-    description:
-      "Creating AI-powered SaaS tools for real users with fast product loops, automation, and practical integrations.",
-    icon: "/assets/shared/icons/icon-frameworks.svg",
-    alt: "Frameworks icon",
-  },
-  {
-    title: "Startup Product Development",
-    description:
-      "Turning startup ideas into launchable MVPs with product thinking, user flows, and reliable engineering.",
-    icon: "/assets/shared/icons/icon-app.svg",
-    alt: "Application icon",
-  },
-  {
-    title: "AI Integrations & Automation",
-    description:
-      "Connecting AI models, APIs, workflows, and data sources to make products smarter and operations faster.",
-    icon: "/assets/shared/icons/icon-marketing.svg",
-    alt: "Automation icon",
-  },
-];
-
-const skills = [
-  { name: "JavaScript", image: "/assets/skills/javascript.png" },
-  { name: "TypeScript", image: "/assets/skills/typescript.png" },
-  { name: "React.js", image: "/assets/skills/react.png" },
-  { name: "Next.js", image: "/assets/skills/next.png" },
-  { name: "Node.js", image: "/assets/skills/node.png" },
-  { name: "MongoDB", image: "/assets/skills/mongodb.svg" },
-  { name: "PostgreSQL", image: "/assets/skills/postgresql.svg" },
-  { name: "Supabase", image: "/assets/skills/supabase.svg" },
-  { name: "Java", image: "/assets/skills/java.svg" },
-  { name: "Spring Boot", image: "/assets/skills/spring-boot.svg" },
-  { name: "Angular", image: "/assets/skills/angular.svg" },
-  { name: "Git & GitHub", image: "/assets/skills/git.png" },
-  { name: "Tailwind CSS", image: "/assets/skills/tailwind-css.svg" },
-  { name: "Prisma", image: "/assets/skills/prisma.svg" },
-  { name: "Firebase", image: "/assets/skills/firebase.svg" },
-  { name: "OpenAI APIs", image: "/assets/skills/openai.svg" },
-  { name: "Vercel", image: "/assets/skills/vercel.svg" },
-  { name: "Netlify", image: "/assets/skills/netlify.svg" },
-];
-
-const strengths = [
-  {
-    title: "SaaS Product Thinking",
-    description:
-      "I think from user problem to product workflow, shipping practical SaaS features that people can use.",
-    image: "/assets/shared/icons/eye.png",
-    alt: "Product thinking",
-  },
-  {
-    title: "Full Stack Development",
-    description:
-      "I build complete products across frontend, backend, database, authentication, deployment, and APIs.",
-    image: "/assets/shared/icons/code.png",
-    alt: "Full stack development",
-  },
-  {
-    title: "AI & Innovation",
-    description:
-      "I integrate AI into products to create smarter workflows, automations, and user experiences.",
-    image: "/assets/shared/icons/vr.png",
-    alt: "AI innovation",
-  },
-  {
-    title: "Hackathons & Leadership",
-    description:
-      "A 7x national hackathon winner with a builder mindset, team leadership, and fast execution.",
-    image: "/assets/shared/icons/languages.png",
-    alt: "Hackathons and leadership",
-  },
-];
-
-const achievements = [
-  "Google Gemini Student Ambassador 2026",
-  "Ex-SDE Intern at Bluestock",
-  "7x National Level Hackathon Winner",
-  "Founder of ApnaAI",
-  "Founder of NeexMeet",
-];
-
-const githubUsername = "Rohit94r";
-const githubUrl = "https://github.com/Rohit94r";
+import { Article } from "@/components/Article";
+import { PaginationLink } from "@/components/PaginationLink";
+import { professionalRoles, profile } from "@/data/site";
+import {
+  aboutParagraphs,
+  aboutHighlights,
+  availableFor,
+  focusAreas,
+  githubUrl,
+  githubUsername,
+  journeyItems,
+  quickStats,
+  skills,
+  strengths,
+} from "@/data/home";
 
 const cardClass =
   "relative rounded-[14px] border border-portfolio-border bg-portfolio-card/85 p-5 shadow-glass backdrop-blur-md md:p-7";
 const sectionTitleClass =
-  "mb-5 flex justify-center text-center text-[24px] font-semibold text-portfolio-text";
-const mutedTextClass = "text-[15px] leading-7 text-portfolio-muted";
+  "section-heading mb-5 flex justify-center text-center text-[26px] font-semibold leading-tight text-portfolio-text md:text-[28px]";
+const mutedTextClass = "text-[15px] leading-8 text-portfolio-muted";
 
 type Contribution = {
   date: string;
@@ -205,6 +74,74 @@ const calculateStats = (contributions: Contribution[], total?: number) => {
   };
 };
 
+function IntroBlock() {
+  return (
+    <section className={`intro-block mb-9 ${cardClass}`}>
+      <p className="intro-kicker mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-portfolio-accent">
+        {profile.motto}
+      </p>
+      <ul className="mb-6 flex flex-wrap justify-center gap-3">
+        {professionalRoles.map((role) => (
+          <li
+            className="rounded-full border border-portfolio-gold/30 bg-portfolio-gold/10 px-4 py-2 text-sm font-medium text-portfolio-text"
+            key={role}
+          >
+            {role}
+          </li>
+        ))}
+      </ul>
+      <div className="space-y-4">
+        {aboutParagraphs.map((paragraph) => (
+          <p className={mutedTextClass} key={paragraph}>
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function QuickStatsSection() {
+  return (
+    <section className="mb-9">
+      <h3 className={sectionTitleClass}>Quick Stats</h3>
+      <ul className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        {quickStats.map((stat) => (
+          <li
+            className="rounded-[14px] border border-portfolio-border bg-portfolio-card/85 p-5 text-center shadow-glass backdrop-blur-md"
+            key={stat.label}
+          >
+            <span className="stat-value block font-accent text-[32px] font-bold leading-none text-portfolio-gold md:text-[36px]">
+              {stat.value}
+            </span>
+            <span className="mt-3 block text-sm leading-snug text-portfolio-muted">
+              {stat.label}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function AvailableForSection() {
+  return (
+    <section className="mb-9">
+      <h3 className={sectionTitleClass}>Available For</h3>
+      <ul className="flex flex-wrap justify-center gap-3">
+        {availableFor.map((item) => (
+          <li
+            className="rounded-full border border-portfolio-border bg-portfolio-soft/80 px-4 py-2.5 text-sm text-portfolio-text transition hover:border-portfolio-gold/50 hover:bg-portfolio-gold/10"
+            key={item}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function JourneySection() {
   const [index, setIndex] = useState(0);
   const item = journeyItems[index];
@@ -239,7 +176,7 @@ function JourneySection() {
         </figure>
 
         <div className="flex min-h-[260px] flex-col justify-center rounded-[14px] border border-portfolio-border bg-portfolio-soft/70 p-6">
-          <p className="mb-2 text-xs font-semibold uppercase text-portfolio-accent">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-portfolio-accent">
             {item.kicker}
           </p>
           <h4 className="mb-3 text-[20px] font-semibold leading-snug text-portfolio-text">
@@ -486,16 +423,9 @@ function GitHubContributions() {
 export default function HomePage() {
   return (
     <Article page="about" title="About me">
-      <section className={`mb-9 ${cardClass}`}>
-        <div className="space-y-4">
-          {aboutParagraphs.map((paragraph) => (
-            <p className={mutedTextClass} key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
-
+      <IntroBlock />
+      <QuickStatsSection />
+      <AvailableForSection />
       <JourneySection />
 
       <section className="mb-9">
@@ -571,7 +501,7 @@ export default function HomePage() {
       <section className="mb-9">
         <h3 className={sectionTitleClass}>Achievements</h3>
         <ul className={`${cardClass} space-y-3`}>
-          {achievements.map((achievement) => (
+          {aboutHighlights.map((achievement) => (
             <li className="flex gap-3 text-sm text-portfolio-muted" key={achievement}>
               <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-portfolio-gold" />
               {achievement}

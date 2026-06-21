@@ -22,6 +22,11 @@ module.exports = {
       boxShadow: {
         glass: "0 24px 70px rgba(55, 84, 78, 0.12)",
       },
+      fontFamily: {
+        accent: ["var(--font-accent)", "Space Grotesk", "sans-serif"],
+        heading: ["var(--font-heading)", "Sora", "sans-serif"],
+        body: ["var(--font-body)", "Plus Jakarta Sans", "sans-serif"],
+      },
     },
   },
   plugins: [],

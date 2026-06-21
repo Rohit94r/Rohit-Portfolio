@@ -59,13 +59,14 @@
   /* font-family */
   --ff-poppins: var(--font-body), "Plus Jakarta Sans", sans-serif;
   --ff-heading: var(--font-heading), "Sora", sans-serif;
+  --ff-accent: var(--font-accent), "Space Grotesk", sans-serif;
 
   /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
+  --fs-1: 28px;
+  --fs-2: 20px;
+  --fs-3: 18px;
+  --fs-4: 17px;
+  --fs-5: 16px;
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
@@ -393,7 +394,7 @@ main {
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: 380px;
 }
 
 .sidebar-info {
@@ -657,7 +658,7 @@ main {
   display: block;
   color: var(--light-gray);
   font-size: var(--fs-8);
-  padding: 20px 7px;
+  padding: 16px 6px;
   white-space: nowrap;
   transition: color var(--transition-1);
 }
@@ -3070,4 +3071,315 @@ select {
   color: var(--light-gray-70);
   padding: 20px;
   text-align: center;
+}
+
+/*-----------------------------------*\
+  #TYPOGRAPHY ENHANCEMENTS
+\*-----------------------------------*/
+
+.font-accent {
+  font-family: var(--ff-accent);
+}
+
+.section-heading {
+  font-family: var(--ff-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.stat-value {
+  font-family: var(--ff-accent);
+}
+
+.intro-kicker {
+  font-family: var(--ff-accent);
+}
+
+/*-----------------------------------*\
+  #SIDEBAR ACTION BOXES
+\*-----------------------------------*/
+
+.sidebar-action-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: opacity var(--transition-1);
+}
+
+.sidebar-action-box:hover,
+.sidebar-action-box:focus {
+  opacity: 0.88;
+}
+
+.sidebar-action-box .contact-link {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+/*-----------------------------------*\
+  #BOOKING MODAL
+\*-----------------------------------*/
+
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(21, 33, 31, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.booking-modal {
+  position: relative;
+  width: min(100%, 520px);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 18px;
+  border: 1px solid var(--jet);
+  background: hsla(0, 0%, 100%, 0.98);
+  box-shadow: var(--shadow-5);
+  padding: 28px 24px 24px;
+}
+
+.booking-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--light-gray);
+  background: var(--onyx);
+  font-size: 22px;
+  transition: var(--transition-1);
+}
+
+.booking-close:hover {
+  color: var(--white-2);
+  background: var(--jet);
+}
+
+.booking-meet-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--jet);
+  background: var(--onyx);
+}
+
+.booking-meet-banner svg {
+  font-size: 28px;
+  color: var(--orange-yellow-crayola);
+}
+
+.booking-meet-label {
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  color: var(--light-gray-70);
+  margin-bottom: 2px;
+}
+
+.booking-meet-link {
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+}
+
+.booking-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-2);
+  color: var(--white-2);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.booking-subtitle {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: grid;
+  gap: 16px;
+}
+
+.booking-field span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  color: var(--light-gray-70);
+  letter-spacing: 0.04em;
+}
+
+.booking-field input,
+.booking-field textarea {
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--white-2);
+  background: var(--onyx);
+  font-size: var(--fs-6);
+  line-height: 1.5;
+}
+
+.booking-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.booking-summary {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--jet);
+  background: var(--onyx);
+}
+
+.booking-summary p {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}
+
+.booking-error {
+  color: var(--bittersweet-shimmer);
+  font-size: var(--fs-7);
+}
+
+.booking-submit,
+.booking-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+}
+
+.booking-submit {
+  width: 100%;
+  color: var(--white-2);
+  background: var(--orange-yellow-crayola);
+}
+
+.booking-submit:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.booking-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.booking-secondary {
+  color: var(--light-gray);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+}
+
+.booking-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 10px;
+}
+
+.booking-success {
+  text-align: center;
+}
+
+.booking-success .booking-submit {
+  margin-top: 20px;
+}
+
+/*-----------------------------------*\
+  #CERTIFICATE FILTER NAV
+\*-----------------------------------*/
+
+.cert-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cert-filter-btn {
+  border-radius: 999px;
+  border: 1px solid var(--jet);
+  background: var(--onyx);
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  padding: 8px 14px;
+  transition: var(--transition-1);
+  cursor: pointer;
+}
+
+.cert-filter-btn:hover,
+.cert-filter-btn:focus {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--white-2);
+}
+
+.cert-filter-btn.active {
+  background: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+  color: var(--white-2);
+}
+
+.sidebar-quick-actions {
+  margin-top: 20px;
+}
+
+.sidebar-location {
+  cursor: default;
+  pointer-events: none;
+}
+
+.sidebar-location address {
+  font-style: normal;
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+.achievement-proof {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 12px;
+  border: 4px solid var(--jet);
+  background: #fff;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.achievement-proof-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 192px;
+  object-fit: contain;
 }
